@@ -7,6 +7,10 @@ task :stream do
 end
 
 task :produce do
-  raise 'not implemented.'
+  produce
+end
+
+task :optimize do 
+  sh "node ../vt-optimizer/index.js -m tiles.mbtiles"
 end
 
