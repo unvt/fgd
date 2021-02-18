@@ -24,9 +24,10 @@ end
 def produce
   cmd = []
   entries {|path, name|
-    cmd << "ogr2ogr -f GeoJSONSeq /vsistdout/ /vsizip/#{path}/#{name} | FGD_LAYER=#{name.split('-')[3]} ruby filter.rb"
+    cmd << "ogr2ogr -lco RS=YES -f GeoJSONSeq /vsistdout/ /vsizip/#{path}/#{name} | FGD_LAYER=#{name.split('-')[3]} node filter.js"
   }
-  cmd = "(#{cmd.join('; ')}) | tippecanoe --no-progress-indicator --no-feature-limit --no-tile-size-limit --simplification=2 --hilbert --minimum-zoom=#{MINZOOM} --maximum-zoom=#{MAXZOOM} --force -o tiles.mbtiles"
+  #cmd = "(#{cmd.join('; ')}) | tippecanoe --no-progress-indicator --no-feature-limit --no-tile-size-limit --simplification=2 --hilbert --minimum-zoom=#{MINZOOM} --maximum-zoom=#{MAXZOOM} --force -o tiles.mbtiles"
+  cmd = "(#{cmd.join('; ')}) | tippecanoe --no-feature-limit --no-tile-size-limit --simplification=2 --hilbert --minimum-zoom=#{MINZOOM} --maximum-zoom=#{MAXZOOM} --force -o tiles.mbtiles"
   sh cmd
-  sh "tile-join --force --no-tile-compression --output-to-directory=docs/zxy --no-tile-size-limit tile.mbtiles"
+  sh "tile-join --force --no-tile-compression --output-to-directory=docs/zxy --no-tile-size-limit tiles.mbtiles"
 end

@@ -1,0 +1,11 @@
+{
+  "name": "fgd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:unvt/fgd",
+  "license": "CC0",
+  "dependencies": {
+    "@turf/area": "^6.3.0",
+    "json-text-sequence": "^0.3.0"
+  }
+}
