@@ -1,0 +1,440 @@
+{
+  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "paint": {
+        "background-color": [
+          "rgb",
+          255,
+          255,
+          255
+        ]
+      },
+      "type": "background"
+    },
+    {
+      "id": "relief",
+      "maxzoom": 9,
+      "minzoom": 0,
+      "paint": {
+        "raster-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          9,
+          0
+        ]
+      },
+      "source": "relief",
+      "type": "raster"
+    },
+    {
+      "id": "AdmArea",
+      "paint": {
+        "fill-color": [
+          "rgba",
+          96,
+          125,
+          139,
+          0
+        ]
+      },
+      "source": "v",
+      "source-layer": "AdmArea",
+      "type": "fill"
+    },
+    {
+      "id": "WA",
+      "paint": {
+        "fill-color": [
+          "rgb",
+          135,
+          206,
+          235
+        ]
+      },
+      "source": "v",
+      "source-layer": "WA",
+      "type": "fill"
+    },
+    {
+      "id": "AdmBdry",
+      "paint": {
+        "line-color": [
+          "rgb",
+          96,
+          125,
+          139
+        ]
+      },
+      "source": "v",
+      "source-layer": "AdmBdry",
+      "type": "line"
+    },
+    {
+      "id": "Cstline",
+      "paint": {
+        "line-color": [
+          "rgb",
+          0,
+          0,
+          255
+        ]
+      },
+      "source": "v",
+      "source-layer": "Cstline",
+      "type": "line"
+    },
+    {
+      "id": "Cntr",
+      "paint": {
+        "line-color": [
+          "rgb",
+          200,
+          160,
+          60
+        ],
+        "line-width": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "match",
+            [
+              "%",
+              [
+                "get",
+                "alti"
+              ],
+              200
+            ],
+            0,
+            2,
+            1
+          ],
+          14,
+          [
+            "match",
+            [
+              "%",
+              [
+                "get",
+                "alti"
+              ],
+              50
+            ],
+            0,
+            2,
+            1
+          ]
+        ]
+      },
+      "source": "v",
+      "source-layer": "Cntr",
+      "type": "line"
+    },
+    {
+      "id": "WL",
+      "paint": {
+        "line-color": [
+          "rgb",
+          135,
+          206,
+          235
+        ]
+      },
+      "source": "v",
+      "source-layer": "WL",
+      "type": "line"
+    },
+    {
+      "id": "WStrL",
+      "paint": {
+        "line-color": [
+          "rgb",
+          96,
+          125,
+          139
+        ]
+      },
+      "source": "v",
+      "source-layer": "WStrL",
+      "type": "line"
+    },
+    {
+      "id": "CommBdry",
+      "paint": {
+        "line-color": [
+          "rgb",
+          96,
+          125,
+          139
+        ]
+      },
+      "source": "v",
+      "source-layer": "CommBdry",
+      "type": "line"
+    },
+    {
+      "id": "SBBdry",
+      "paint": {
+        "line-color": [
+          "rgb",
+          96,
+          125,
+          139
+        ]
+      },
+      "source": "v",
+      "source-layer": "SBBdry",
+      "type": "line"
+    },
+    {
+      "id": "RailCL",
+      "paint": {
+        "line-color": [
+          "rgb",
+          96,
+          125,
+          139
+        ]
+      },
+      "source": "v",
+      "source-layer": "RailCL",
+      "type": "line"
+    },
+    {
+      "id": "RdCompt",
+      "paint": {
+        "line-color": [
+          "rgb",
+          96,
+          125,
+          139
+        ]
+      },
+      "source": "v",
+      "source-layer": "RdCompt",
+      "type": "line"
+    },
+    {
+      "id": "RdEdg",
+      "paint": {
+        "line-color": [
+          "rgb",
+          96,
+          125,
+          139
+        ]
+      },
+      "source": "v",
+      "source-layer": "RdEdg",
+      "type": "line"
+    },
+    {
+      "id": "BldA",
+      "paint": {
+        "fill-extrusion-color": [
+          "match",
+          [
+            "get",
+            "type"
+          ],
+          "普通建物",
+          [
+            "rgb",
+            200,
+            200,
+            200
+          ],
+          "堅ろう建物",
+          [
+            "rgb",
+            213,
+            199,
+            170
+          ],
+          "普通無壁舎",
+          [
+            "rgb",
+            222,
+            217,
+            240
+          ],
+          "堅ろう無壁舎",
+          [
+            "rgb",
+            238,
+            227,
+            174
+          ],
+          "その他",
+          [
+            "rgb",
+            243,
+            223,
+            208
+          ],
+          [
+            "rgb",
+            222,
+            215,
+            215
+          ]
+        ],
+        "fill-extrusion-height": [
+          "match",
+          [
+            "get",
+            "type"
+          ],
+          [
+            "堅ろう建物",
+            "堅ろう無壁舎"
+          ],
+          20,
+          3.66
+        ],
+        "fill-extrusion-opacity": 0.7
+      },
+      "source": "v",
+      "source-layer": "BldA",
+      "type": "fill-extrusion"
+    },
+    {
+      "id": "ElevPt",
+      "paint": {
+        "circle-color": [
+          "rgb",
+          96,
+          125,
+          139
+        ],
+        "circle-radius": 2.5
+      },
+      "source": "v",
+      "source-layer": "ElevPt",
+      "type": "circle"
+    },
+    {
+      "id": "GCP",
+      "paint": {
+        "circle-color": [
+          "rgb",
+          96,
+          125,
+          139
+        ],
+        "circle-radius": 2.5
+      },
+      "source": "v",
+      "source-layer": "GCP",
+      "type": "circle"
+    },
+    {
+      "id": "SBAPt",
+      "layout": {
+        "text-field": [
+          "get",
+          "sbaNo"
+        ],
+        "text-size": 8
+      },
+      "paint": {
+        "text-color": [
+          "rgb",
+          0,
+          0,
+          0
+        ],
+        "text-halo-color": [
+          "rgb",
+          255,
+          255,
+          255
+        ],
+        "text-halo-width": 2
+      },
+      "source": "v",
+      "source-layer": "SBAPt",
+      "type": "symbol"
+    },
+    {
+      "id": "CommPt",
+      "layout": {
+        "text-field": [
+          "get",
+          "name"
+        ],
+        "text-size": 10
+      },
+      "paint": {
+        "text-color": [
+          "rgb",
+          0,
+          0,
+          0
+        ],
+        "text-halo-color": [
+          "rgb",
+          255,
+          255,
+          255
+        ],
+        "text-halo-width": 2
+      },
+      "source": "v",
+      "source-layer": "CommPt",
+      "type": "symbol"
+    },
+    {
+      "id": "AdmPt",
+      "paint": {
+        "circle-color": [
+          "rgb",
+          96,
+          125,
+          139
+        ],
+        "circle-radius": 2.5
+      },
+      "source": "v",
+      "source-layer": "AdmPt",
+      "type": "circle"
+    }
+  ],
+  "site_root": "http://localhost:9966",
+  "sources": {
+    "relief": {
+      "maxzoom": 5,
+      "minzoom": 0,
+      "tileSize": 512,
+      "tiles": [
+        "https://optgeo.github.io/relief/zxy/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "v": {
+      "attribution": "TODO",
+      "maxzoom": 16,
+      "tiles": [
+        "http://localhost:9966/zxy/{z}/{x}/{y}.pbf"
+      ],
+      "type": "vector"
+    }
+  },
+  "version": 8,
+  "zoom": 8,
+  "center": [
+    135.524597,
+    34.770948
+  ]
+}
