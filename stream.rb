@@ -1,6 +1,5 @@
 require 'find'
 require 'zip'
-require './filter.rb'
 
 def entries
   Find.find(SRC_DIR) {|path|

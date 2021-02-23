@@ -1,4 +1,8 @@
+require 'json'
 require './stream.rb'
+
+MINZOOM = 6
+MAXZOOM = 16
 
 SRC_DIR = "#{Dir.home}/Downloads/PackDLMap"
 LAN_URL = 'http://localhost:9966'
