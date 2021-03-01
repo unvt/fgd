@@ -6,7 +6,8 @@ MAXZOOM = 16
 
 SRC_DIR = "#{Dir.home}/Downloads/PackDLMap"
 LAN_URL = 'http://localhost:9966'
-GITHUB_URL = 'https://optgeo.github.io/durana-dev'
+#LAN_URL = 'http://m343:9966'
+GITHUB_URL = 'https://optgeo.github.io/fgd-dev'
 
 desc 'Dump GeoJSON Text Sequence'
 task :stream do

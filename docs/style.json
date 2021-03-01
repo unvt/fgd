@@ -65,13 +65,711 @@
       "type": "fill"
     },
     {
-      "id": "AdmBdry",
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "不明",
+        true,
+        false
+      ],
+      "id": "CommBdry-fumei",
       "paint": {
         "line-color": [
           "rgb",
-          96,
-          125,
-          139
+          206,
+          147,
+          216
+        ],
+        "line-dasharray": [
+          5,
+          7.8,
+          0.4,
+          0.8
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          6
+        ]
+      },
+      "source": "v",
+      "source-layer": "CommBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "その他",
+        true,
+        false
+      ],
+      "id": "CommBdry-koaza",
+      "paint": {
+        "line-color": [
+          "rgb",
+          206,
+          147,
+          216
+        ],
+        "line-dasharray": [
+          4,
+          1
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          4
+        ]
+      },
+      "source": "v",
+      "source-layer": "CommBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "大字・町・丁目界",
+        true,
+        false
+      ],
+      "id": "CommBdry-oaza",
+      "paint": {
+        "line-color": [
+          "rgb",
+          206,
+          147,
+          216
+        ],
+        "line-dasharray": [
+          5,
+          1
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          4
+        ]
+      },
+      "source": "v",
+      "source-layer": "CommBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "市区町村界",
+        true,
+        false
+      ],
+      "id": "CommBdry-shiku",
+      "paint": {
+        "line-color": [
+          "rgb",
+          206,
+          147,
+          216
+        ],
+        "line-dasharray": [
+          5,
+          0.8,
+          0.4,
+          0.6,
+          0.4,
+          0.8
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          6
+        ]
+      },
+      "source": "v",
+      "source-layer": "CommBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "町村・指定都市の区界",
+        true,
+        false
+      ],
+      "id": "CommBdry-cho",
+      "paint": {
+        "line-color": [
+          "rgb",
+          206,
+          147,
+          216
+        ],
+        "line-dasharray": [
+          5,
+          0.8,
+          0.4,
+          0.8
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          6
+        ]
+      },
+      "source": "v",
+      "source-layer": "CommBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "郡市・東京都の区界",
+        true,
+        false
+      ],
+      "id": "CommBdry-shi",
+      "paint": {
+        "line-color": [
+          "rgb",
+          206,
+          147,
+          216
+        ],
+        "line-dasharray": [
+          5,
+          0.8,
+          0.4,
+          0.6,
+          0.4,
+          0.8
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          6
+        ]
+      },
+      "source": "v",
+      "source-layer": "CommBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "北海道総合振興局・振興局界",
+        true,
+        false
+      ],
+      "id": "CommBdry-shinko",
+      "paint": {
+        "line-color": [
+          "rgb",
+          206,
+          147,
+          216
+        ],
+        "line-dasharray": [
+          5,
+          0.5,
+          0.4,
+          0.5,
+          0.4,
+          0.5,
+          0.4,
+          0.5
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          6
+        ]
+      },
+      "source": "v",
+      "source-layer": "CommBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "都道府県界",
+        true,
+        false
+      ],
+      "id": "CommBdry-ken",
+      "paint": {
+        "line-color": [
+          "rgb",
+          206,
+          147,
+          216
+        ],
+        "line-dasharray": [
+          5,
+          1.3,
+          0.4,
+          1.3
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          6
+        ]
+      },
+      "source": "v",
+      "source-layer": "CommBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "不明",
+        true,
+        false
+      ],
+      "id": "AdmBdry-fumei",
+      "paint": {
+        "line-color": [
+          "rgb",
+          156,
+          39,
+          176
+        ],
+        "line-dasharray": [
+          5,
+          7.8,
+          0.4,
+          0.8
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          6
+        ]
+      },
+      "source": "v",
+      "source-layer": "AdmBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "その他",
+        true,
+        false
+      ],
+      "id": "AdmBdry-koaza",
+      "paint": {
+        "line-color": [
+          "rgb",
+          156,
+          39,
+          176
+        ],
+        "line-dasharray": [
+          4,
+          1
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          4
+        ]
+      },
+      "source": "v",
+      "source-layer": "AdmBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "大字・町・丁目界",
+        true,
+        false
+      ],
+      "id": "AdmBdry-oaza",
+      "paint": {
+        "line-color": [
+          "rgb",
+          156,
+          39,
+          176
+        ],
+        "line-dasharray": [
+          5,
+          1
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          4
+        ]
+      },
+      "source": "v",
+      "source-layer": "AdmBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "市区町村界",
+        true,
+        false
+      ],
+      "id": "AdmBdry-shiku",
+      "paint": {
+        "line-color": [
+          "rgb",
+          156,
+          39,
+          176
+        ],
+        "line-dasharray": [
+          5,
+          0.8,
+          0.4,
+          0.6,
+          0.4,
+          0.8
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          6
+        ]
+      },
+      "source": "v",
+      "source-layer": "AdmBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "町村・指定都市の区界",
+        true,
+        false
+      ],
+      "id": "AdmBdry-cho",
+      "paint": {
+        "line-color": [
+          "rgb",
+          156,
+          39,
+          176
+        ],
+        "line-dasharray": [
+          5,
+          0.8,
+          0.4,
+          0.8
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          6
+        ]
+      },
+      "source": "v",
+      "source-layer": "AdmBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "郡市・東京都の区界",
+        true,
+        false
+      ],
+      "id": "AdmBdry-shi",
+      "paint": {
+        "line-color": [
+          "rgb",
+          156,
+          39,
+          176
+        ],
+        "line-dasharray": [
+          5,
+          0.8,
+          0.4,
+          0.6,
+          0.4,
+          0.8
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          6
+        ]
+      },
+      "source": "v",
+      "source-layer": "AdmBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "北海道総合振興局・振興局界",
+        true,
+        false
+      ],
+      "id": "AdmBdry-shinko",
+      "paint": {
+        "line-color": [
+          "rgb",
+          156,
+          39,
+          176
+        ],
+        "line-dasharray": [
+          5,
+          0.5,
+          0.4,
+          0.5,
+          0.4,
+          0.5,
+          0.4,
+          0.5
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          6
+        ]
+      },
+      "source": "v",
+      "source-layer": "AdmBdry",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "都道府県界",
+        true,
+        false
+      ],
+      "id": "AdmBdry-ken",
+      "paint": {
+        "line-color": [
+          "rgb",
+          156,
+          39,
+          176
+        ],
+        "line-dasharray": [
+          5,
+          1.3,
+          0.4,
+          1.3
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1,
+          16,
+          6
         ]
       },
       "source": "v",
@@ -167,20 +865,6 @@
       },
       "source": "v",
       "source-layer": "WStrL",
-      "type": "line"
-    },
-    {
-      "id": "CommBdry",
-      "paint": {
-        "line-color": [
-          "rgb",
-          96,
-          125,
-          139
-        ]
-      },
-      "source": "v",
-      "source-layer": "CommBdry",
       "type": "line"
     },
     {
@@ -311,33 +995,81 @@
     },
     {
       "id": "ElevPt",
-      "paint": {
-        "circle-color": [
-          "rgb",
-          96,
-          125,
-          139
+      "layout": {
+        "text-field": [
+          "concat",
+          [
+            "get",
+            "type"
+          ],
+          [
+            "get",
+            "alti"
+          ],
+          "m"
         ],
-        "circle-radius": 2.5
+        "text-size": 10
+      },
+      "paint": {
+        "text-color": [
+          "rgb",
+          48,
+          63,
+          159
+        ],
+        "text-halo-color": [
+          "rgb",
+          255,
+          255,
+          255
+        ],
+        "text-halo-width": 2
       },
       "source": "v",
       "source-layer": "ElevPt",
-      "type": "circle"
+      "type": "symbol"
     },
     {
       "id": "GCP",
-      "paint": {
-        "circle-color": [
-          "rgb",
-          96,
-          125,
-          139
+      "layout": {
+        "text-field": [
+          "concat",
+          [
+            "get",
+            "gcpClass"
+          ],
+          "「",
+          [
+            "get",
+            "name"
+          ],
+          "」",
+          [
+            "get",
+            "alti"
+          ],
+          "m"
         ],
-        "circle-radius": 2.5
+        "text-size": 10
+      },
+      "paint": {
+        "text-color": [
+          "rgb",
+          26,
+          35,
+          126
+        ],
+        "text-halo-color": [
+          "rgb",
+          255,
+          255,
+          255
+        ],
+        "text-halo-width": 2
       },
       "source": "v",
       "source-layer": "GCP",
-      "type": "circle"
+      "type": "symbol"
     },
     {
       "id": "SBAPt",
@@ -397,21 +1129,34 @@
     },
     {
       "id": "AdmPt",
-      "paint": {
-        "circle-color": [
-          "rgb",
-          96,
-          125,
-          139
+      "layout": {
+        "text-field": [
+          "get",
+          "name"
         ],
-        "circle-radius": 2.5
+        "text-size": 16
+      },
+      "paint": {
+        "text-color": [
+          "rgb",
+          0,
+          0,
+          0
+        ],
+        "text-halo-color": [
+          "rgb",
+          255,
+          255,
+          255
+        ],
+        "text-halo-width": 2
       },
       "source": "v",
       "source-layer": "AdmPt",
-      "type": "circle"
+      "type": "symbol"
     }
   ],
-  "site_root": "http://localhost:9966",
+  "site_root": "http://m343:9966",
   "sources": {
     "relief": {
       "maxzoom": 5,
@@ -426,11 +1171,15 @@
       "attribution": "TODO",
       "maxzoom": 16,
       "tiles": [
-        "http://localhost:9966/zxy/{z}/{x}/{y}.pbf"
+        "http://m343:9966/zxy/{z}/{x}/{y}.pbf"
       ],
       "type": "vector"
     }
   },
   "version": 8,
-  "zoom": 8
+  "zoom": 8,
+  "center": [
+    139.820251,
+    35.713068
+  ]
 }
