@@ -5,9 +5,14 @@ MINZOOM = 6
 MAXZOOM = 16
 
 SRC_DIR = "#{Dir.home}/Downloads/PackDLMap"
-LAN_URL = 'http://localhost:9966'
-#LAN_URL = 'http://m343:9966'
-GITHUB_URL = 'https://optgeo.github.io/fgd-dev'
+#LAN_URL = 'http://localhost:9966'
+LAN_URL = 'http://m343:9966'
+GITHUB_URL = 'https://optgeo.github.io/fgd-sapporo'
+
+desc 'Monitor Raspberry Pi temperature'
+task :temp do
+  sh "while true; do vcgencmd measure_clock arm ; vcgencmd measure_temp; sleep 1; clear; done"
+end
 
 desc 'Dump GeoJSON Text Sequence'
 task :stream do

@@ -910,6 +910,45 @@
       "type": "line"
     },
     {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "徒歩道",
+        true,
+        false
+      ],
+      "id": "RdEdg-toho",
+      "paint": {
+        "line-color": [
+          "rgb",
+          96,
+          125,
+          139
+        ],
+        "line-dasharray": [
+          4,
+          1
+        ],
+        "line-width": 2
+      },
+      "source": "v",
+      "source-layer": "RdEdg",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        "徒歩道",
+        false,
+        true
+      ],
       "id": "RdEdg",
       "paint": {
         "line-color": [
@@ -1156,7 +1195,7 @@
       "type": "symbol"
     }
   ],
-  "site_root": "http://m343:9966",
+  "site_root": "https://optgeo.github.io/fgd-sapporo",
   "sources": {
     "relief": {
       "maxzoom": 5,
@@ -1168,10 +1207,10 @@
       "type": "raster"
     },
     "v": {
-      "attribution": "TODO",
+      "attribution": "<a title='測量法に基づく国土地理院長承認(使用)R 2JHs 1065'>R 2JHs 1065</a>",
       "maxzoom": 16,
       "tiles": [
-        "http://m343:9966/zxy/{z}/{x}/{y}.pbf"
+        "https://optgeo.github.io/fgd-sapporo/zxy/{z}/{x}/{y}.pbf"
       ],
       "type": "vector"
     }
@@ -1179,7 +1218,7 @@
   "version": 8,
   "zoom": 8,
   "center": [
-    139.820251,
-    35.713068
+    141.418762,
+    43.111009
   ]
 }
