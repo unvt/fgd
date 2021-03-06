@@ -1,5 +1,5 @@
 # fgd
-A tool in the UN Vector Tile Toolkit (UNVT) to produce vector tiles from Japanese Fundamental Geospatial Data (FGD
+A tool in the UN Vector Tile Toolkit (UNVT) to produce vector tiles from Japanese Fundamental Geospatial Data (FGD)
 
 # install
 ```ruby
