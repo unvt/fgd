@@ -136,7 +136,6 @@ const modify = {
 
 if (modify) {
   const startTime = Date.now()
-  console.error(`Procesing ${process.env.FGD_LAYER}.`)
   const parser = new Parser()
     .on('data', f => {
       f = commonFilter(f)
@@ -147,7 +146,7 @@ if (modify) {
       }
     })
     .on('finish', () => {
-      console.error(`  Took ${Date.now() - startTime}ms.`)
+      console.error(`${Date.now() - startTime}ms for ${process.env.FGD_LAYER}`)
     })
   process.stdin.pipe(parser)
 } else {

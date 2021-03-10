@@ -4,7 +4,11 @@ require './stream.rb'
 MINZOOM = 6
 MAXZOOM = 16
 
-SRC_DIR = "#{Dir.home}/Downloads/PackDLMap"
+#SRC_DIR = "#{Dir.home}/Downloads/PackDLMap"
+SRC_DIR = "/mnt/ssd/tmp/PackDLMap"
+MBTILES_PATH = "/mnt/ssd/tmp/tiles.mbtiles"
+MBTILES_DIR = "/mnt/ssd/tmp/mbtiles"
+#DST = 'tiles.mbtiles'
 #LAN_URL = 'http://localhost:9966'
 LAN_URL = 'http://m343:9966'
 GITHUB_URL = 'https://optgeo.github.io/fgd-sapporo'
