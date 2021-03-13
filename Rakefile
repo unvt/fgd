@@ -1,17 +1,24 @@
 require 'json'
 require './stream.rb'
 
-MINZOOM = 6
+MINZOOM = 3 #6
 MAXZOOM = 16
 
 #SRC_DIR = "#{Dir.home}/Downloads/PackDLMap"
-SRC_DIR = "/mnt/ssd/tmp/PackDLMap"
-MBTILES_PATH = "/mnt/ssd/tmp/tiles.mbtiles"
+SRC_DIR = "/mnt/ssd/tmp/japan"
+
+#MBTILES_PATH = "/mnt/ssd/tmp/tiles.mbtiles"
+MBTILES_PATH = "tiles.mbtiles"
+
 MBTILES_DIR = "/mnt/ssd/tmp/mbtiles"
-#DST = 'tiles.mbtiles'
+#MBTILES_DIR = "mbtiles"
+
 #LAN_URL = 'http://localhost:9966'
 LAN_URL = 'http://m343:9966'
-GITHUB_URL = 'https://optgeo.github.io/fgd-sapporo'
+GITHUB_URL = 'https://optgeo.github.io/fgd-kaigansen'
+
+LAYERS = %w{AdmArea AdmBdry AdmPt BldA BldL Cntr CommBdry CommPt Cstline ElevPt GCP RailCL RdCompt RdEdg WA WL WStrA WStrL SBAPt SBBdry}
+
 
 desc 'Monitor Raspberry Pi temperature'
 task :temp do

@@ -35,7 +35,7 @@ const flap = (f, z) => {
 
 const modify = {
   AdmArea: f => {
-    f.tippecanoe.minzoom = MAXZOOM
+    f.tippecanoe.minzoom = 8 //MAXZOOM
     return f
   },
   AdmBdry: f => {
@@ -45,7 +45,7 @@ const modify = {
     }
   },
   AdmPt: f => {
-    f.tippecanoe.minzoom = MAXZOOM
+    f.tippecanoe.minzoom = 7 //MAXZOOM
     return f
   },
   BldA: f => {
@@ -73,7 +73,7 @@ const modify = {
     return f
   },
   Cstline: f => {
-    f.tippecanoe.minzoom = 6
+    f.tippecanoe.minzoom = 3 //6
     return f
   },
   ElevPt: f => {

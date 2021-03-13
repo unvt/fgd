@@ -8,6 +8,8 @@ def entries
     Zip::File.open(path) {|zip_file|
       zip_file.each {|entry|
         next unless /^FG-GML/.match entry.name
+#next unless /(Cstline|AdmArea|AdmPt|AdmBdry)/.match entry.name
+next unless /(Cstline|AdmPt|AdmBdry)/.match entry.name
         yield path, entry.name
       }
     }
@@ -35,12 +37,37 @@ def produce
   w1.close
   w2.close
   w3.close
+  #cmd = [
+  #  "parallel",
+  #  "'",
+  #    "ogr2ogr -lco RS=YES -f GeoJSONSeq /vsistdout/ {1} |",
+  #    "FGD_LAYER={2} node filter.js |",
+  #    "tippecanoe",
+  #      "--no-progress-indicator",
+  #      "--no-feature-limit",
+  #      "--no-tile-size-limit",
+  #      "--simplification=2",
+  #      "--hilbert",
+  #      "--minimum-zoom=#{MINZOOM}",
+  #      "--maximum-zoom=#{MAXZOOM}",
+  #      "--force",
+  #      "--layer=default",
+  #      "--quiet",
+  #      "-o {3};",
+  #    "true",
+  #  "'",
+  #  ":::: w1.txt ::::+ w2.txt ::::+ w3.txt"
+  #].join(' ')
   cmd = [
     "parallel --line-buffer",
     "'",
       "ogr2ogr -lco RS=YES -f GeoJSONSeq /vsistdout/ {1} |",
-      "FGD_LAYER={2} node filter.js |",
-      "tippecanoe",
+      "FGD_LAYER={2} node filter.js;",
+    "'",
+    ":::: w1.txt ::::+ w2.txt |"
+  ].join(' ') + 
+  [
+    "tippecanoe",
       "--no-progress-indicator",
       "--no-feature-limit",
       "--no-tile-size-limit",
@@ -49,16 +76,24 @@ def produce
       "--minimum-zoom=#{MINZOOM}",
       "--maximum-zoom=#{MAXZOOM}",
       "--force",
-      "-o {3}",
-    "'",
-    ":::: w1.txt ::::+ w2.txt ::::+ w3.txt"
+      "--layer=default",
+      "--quiet",
+      "--output=#{MBTILES_PATH}"
   ].join(' ')
-  #cmd += " | tippecanoe --no-progress-indicator --no-feature-limit --no-tile-size-limit --simplification=2 --hilbert --minimum-zoom=#{MINZOOM} --maximum-zoom=#{MAXZOOM} --force -o #{MBTILES_PATH}"
-  #cmd += " | tippecanoe --no-progress-indicator --no-feature-limit --no-tile-size-limit --simplification=2 --hilbert --minimum-zoom=#{MINZOOM} --maximum-zoom=#{MAXZOOM} --force -o #{MBTILES_PATH}"
+
   sh cmd
-  mbtiles = Dir.glob("#{MBTILES_DIR}/*.mbtiles")
-  sh "tile-join --force -o #{MBTILES_PATH} #{mbtiles.join(' ')}"
+
+  #LAYERS.each {|layer|
+  #  g = Dir.glob("#{MBTILES_DIR}/*#{layer}*.mbtiles").join(' ')
+  #  sh "tile-join --force -o #{MBTILES_DIR}/00#{layer}.mbtiles #{g}" 
+  #}
+  #g = LAYERS.map{|layer| "#{MBTILES_DIR}/00#{layer}.mbtiles"}.join(' ')
+  #sh "tile-join --force -o #{MBTILES_PATH} #{g}"
   sh "tile-join --force --no-tile-compression --output-to-directory=docs/zxy --no-tile-size-limit #{MBTILES_PATH}"
+ 
+  #g = Dir.glob("#{MBTILES_DIR}/FG*.mbtiles").join(' ')
+  #sh "tile-join --force --no-tile-compression --output-to-directory=docs/zxy --no-tile-size-limit #{g}"
+  
   FileUtils.rm('w1.txt')
   FileUtils.rm('w2.txt')
   FileUtils.rm('w3.txt')

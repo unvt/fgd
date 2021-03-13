@@ -1195,7 +1195,7 @@
       "type": "symbol"
     }
   ],
-  "site_root": "https://optgeo.github.io/fgd-sapporo",
+  "site_root": "https://optgeo.github.io/fgd-kaigansen",
   "sources": {
     "relief": {
       "maxzoom": 5,
@@ -1210,7 +1210,7 @@
       "attribution": "<a title='測量法に基づく国土地理院長承認(使用)R 2JHs 1065'>R 2JHs 1065</a>",
       "maxzoom": 16,
       "tiles": [
-        "https://optgeo.github.io/fgd-sapporo/zxy/{z}/{x}/{y}.pbf"
+        "https://optgeo.github.io/fgd-kaigansen/zxy/{z}/{x}/{y}.pbf"
       ],
       "type": "vector"
     }
@@ -1218,7 +1218,7 @@
   "version": 8,
   "zoom": 8,
   "center": [
-    141.418762,
-    43.111009
+    129.745789,
+    32.586164
   ]
 }
